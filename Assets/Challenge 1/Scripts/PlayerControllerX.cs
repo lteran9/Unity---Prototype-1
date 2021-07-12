@@ -2,28 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControllerX : MonoBehaviour
+namespace Prototype1.Challenge1
 {
-    public float speed;
-    public float rotationSpeed;
-    public float verticalInput;
+   public class PlayerControllerX : MonoBehaviour
+   {
+      [SerializeField] float speed;
+      [SerializeField] float rotationSpeed;
+      [SerializeField] float verticalInput;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+      // Start is called before the first frame update
+      void Start()
+      {
 
-    }
+      }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        // get the user's vertical input
-        verticalInput = Input.GetAxis("Vertical");
+      void Update()
+      {
+         // get the user's vertical input
+         verticalInput = Input.GetAxis("Vertical");
+      }
 
-        // move the plane forward at a constant rate
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
+      // Update is called once per frame
+      void FixedUpdate()
+      {
+         // move the plane forward at a constant rate
+         transform.Translate(Vector3.forward * Time.deltaTime * speed);
 
-        // tilt the plane up/down based on up/down arrow keys
-        transform.Rotate(Vector3.right * rotationSpeed * Time.deltaTime * verticalInput);
-    }
+         // tilt the plane up/down based on up/down arrow keys
+         transform.Rotate(Vector3.right * rotationSpeed * Time.deltaTime * verticalInput);
+      }
+   }
 }

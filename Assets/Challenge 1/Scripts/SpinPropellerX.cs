@@ -2,19 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpinPropellerX : MonoBehaviour
+namespace Prototype1.Challenge1
 {
-   private float spinSpeed = 1200f;
+   public class SpinPropellerX : MonoBehaviour
+   {
+      float spinSpeed = 1200f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+      // Start is called before the first frame update
+      void Start()
+      {
 
-    // Update is called once per frame
-    void Update()
-    {
-        transform.Rotate(Vector3.forward, Time.deltaTime * spinSpeed);
-    }
+      }
+
+      // Update is called once per frame
+      void Update()
+      {
+         transform.Rotate(Vector3.forward, Time.deltaTime * spinSpeed);
+      }
+   }
 }

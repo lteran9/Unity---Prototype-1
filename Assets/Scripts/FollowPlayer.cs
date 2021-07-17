@@ -6,9 +6,10 @@ namespace Prototype1
 {
    public class FollowPlayer : MonoBehaviour
    {
-      Vector3 offset = new Vector3(0, 5, -7);
-      
+      [Header("Player & Camera Options")]
       [SerializeField] GameObject player;
+      [SerializeField] Vector3 offset = new Vector3(0, 5, -7);
+
 
       // Start is called before the first frame update
       void Start()

@@ -12,6 +12,8 @@ namespace Prototype1
       float horizontalInput = 0.0f;
       float forwardInput = 0.0f;
 
+      Rigidbody rb = default;
+
       #region Wheels
       Transform[] wheels = new Transform[4];
       #endregion
@@ -19,6 +21,7 @@ namespace Prototype1
       // Start is called before the first frame update
       void Start()
       {
+         rb = GetComponent<Rigidbody>();
          GetVehicleWheels();
       }
 
@@ -32,10 +35,14 @@ namespace Prototype1
 
       void FixedUpdate()
       {
+         var force = Vector3.forward * Time.deltaTime * speed * forwardInput;
+
          // Move the vehicle forward
-         transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
+         transform.Translate(force);
+         // Rotate left or right
          transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
 
+         // Spin wheels
          float distanceTraveled = speed * Time.deltaTime;
          float rotationInRadians = distanceTraveled / wheelRadius;
          float rotationInDegrees = rotationInRadians * Mathf.Rad2Deg;

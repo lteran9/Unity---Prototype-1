@@ -6,7 +6,7 @@ namespace Prototype1.Challenge1
 {
    public class SpinPropellerX : MonoBehaviour
    {
-      float spinSpeed = 1200f;
+      [SerializeField] float spinSpeed = 1200f;
 
       // Start is called before the first frame update
       void Start()

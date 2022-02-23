@@ -62,10 +62,13 @@ namespace Prototype1
 
       void SpinVehicleWheels(float rotationDegree)
       {
-         wheels[0].Rotate(rotationDegree, 0, 0);
-         wheels[1].Rotate(rotationDegree, 0, 0);
-         wheels[2].Rotate(rotationDegree, 0, 0);
-         wheels[3].Rotate(rotationDegree, 0, 0);
+         if (forwardInput > 0.05)
+         {
+            wheels[0].Rotate(rotationDegree, 0, 0);
+            wheels[1].Rotate(rotationDegree, 0, 0);
+            wheels[2].Rotate(rotationDegree, 0, 0);
+            wheels[3].Rotate(rotationDegree, 0, 0);
+         }
       }
    }
 }

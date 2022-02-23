@@ -18,7 +18,7 @@ namespace Prototype1
       }
 
       // Update is called once per frame
-      void Update()
+      void LateUpdate()
       {
          // Offset camera position behind player object
          transform.position = player.transform.position + offset;

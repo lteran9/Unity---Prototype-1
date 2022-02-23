@@ -6,7 +6,7 @@ namespace Prototype1.Challenge1
 {
    public class FollowPlayerX : MonoBehaviour
    {
-      Vector3 offset = new Vector3(26.5f, 0, 10f);
+      [SerializeField] Vector3 offset = new Vector3(26.5f, 0, 10f);
 
       [SerializeField] GameObject plane;
 

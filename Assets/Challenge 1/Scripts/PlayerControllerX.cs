@@ -6,9 +6,11 @@ namespace Prototype1.Challenge1
 {
    public class PlayerControllerX : MonoBehaviour
    {
-      [SerializeField] float speed;
-      [SerializeField] float rotationSpeed;
-      [SerializeField] float verticalInput;
+      [SerializeField] float speed = default;
+      [SerializeField] float rotationSpeed = default;
+      [SerializeField] float verticalInput = default;
+
+      [SerializeField] GameManagerX _gameManager = default;
 
       // Start is called before the first frame update
       void Start()
@@ -25,11 +27,14 @@ namespace Prototype1.Challenge1
       // Update is called once per frame
       void FixedUpdate()
       {
-         // move the plane forward at a constant rate
-         transform.Translate(Vector3.forward * Time.deltaTime * speed);
+         if (_gameManager?.IsGameActive() == true)
+         {
+            // move the plane forward at a constant rate
+            transform.Translate(Vector3.forward * Time.deltaTime * speed);
 
-         // tilt the plane up/down based on up/down arrow keys
-         transform.Rotate(Vector3.right * rotationSpeed * Time.deltaTime * verticalInput);
+            // tilt the plane up/down based on up/down arrow keys
+            transform.Rotate(Vector3.right * rotationSpeed * Time.deltaTime * verticalInput);
+         }
       }
    }
 }

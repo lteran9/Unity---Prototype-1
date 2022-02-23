@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class GameManagerX : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+   bool isGameActive = default;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   // Start is called before the first frame update
+   void Start()
+   {
+
+   }
+
+   // Update is called once per frame
+   void Update()
+   {
+
+   }
+
+   public void StartGame()
+   {
+      isGameActive = true;
+   }
+
+   public bool IsGameActive()
+   {
+      return isGameActive;
+   }
 }

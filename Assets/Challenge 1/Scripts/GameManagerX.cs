@@ -23,6 +23,11 @@ public class GameManagerX : MonoBehaviour
       isGameActive = true;
    }
 
+   public void EndGame()
+   {
+      isGameActive = false;
+   }
+
    public bool IsGameActive()
    {
       return isGameActive;

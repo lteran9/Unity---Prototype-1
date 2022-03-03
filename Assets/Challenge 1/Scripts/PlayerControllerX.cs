@@ -12,6 +12,13 @@ namespace Prototype1.Challenge1
 
       [SerializeField] GameManagerX _gameManager = default;
 
+      int rotationDirection = -1; // clockwise
+      int rotationStep = 10;
+
+      bool blockVerticalInput = false;
+
+      Vector3 currentRotation, targetRotation;
+
       // Start is called before the first frame update
       void Start()
       {
@@ -20,8 +27,26 @@ namespace Prototype1.Challenge1
 
       void Update()
       {
-         // get the user's vertical input
-         verticalInput = Input.GetAxis("Vertical");
+         if (_gameManager?.IsGameActive() == true)
+         {
+            if (blockVerticalInput == false)
+            {
+               // get the user's vertical input
+               verticalInput = Input.GetAxis("Vertical");
+            }
+
+            if (Input.GetKeyDown("space"))
+            {
+               blockVerticalInput = true;
+               gameObject.transform.Rotate(0, 0, -90);
+            }
+
+            if (Input.GetKeyUp("space"))
+            {
+               gameObject.transform.Rotate(0, 0, 90);
+               blockVerticalInput = false;
+            }
+         }
       }
 
       // Update is called once per frame
@@ -34,6 +59,10 @@ namespace Prototype1.Challenge1
 
             // tilt the plane up/down based on up/down arrow keys
             transform.Rotate(Vector3.right * rotationSpeed * Time.deltaTime * verticalInput);
+         }
+         else
+         {
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
          }
       }
    }

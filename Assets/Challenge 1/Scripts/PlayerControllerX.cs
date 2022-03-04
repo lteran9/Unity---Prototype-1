@@ -34,6 +34,10 @@ namespace Prototype1.Challenge1
                // get the user's vertical input
                verticalInput = Input.GetAxis("Vertical");
             }
+            else
+            {
+               verticalInput = 0;
+            }
 
             if (Input.GetKeyDown("space"))
             {

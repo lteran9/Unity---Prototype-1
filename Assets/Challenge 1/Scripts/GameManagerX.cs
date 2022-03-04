@@ -2,34 +2,47 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManagerX : MonoBehaviour
+namespace Prototype1.Challenge1
 {
-   bool isGameActive = default;
-
-   // Start is called before the first frame update
-   void Start()
+   public class GameManagerX : MonoBehaviour
    {
+      // Start, Settings, Exit
+      [SerializeField] Canvas _mainMenu = default;
+      // Restart
+      [SerializeField] Canvas _gameOver = default;
 
-   }
+      bool isGameActive = default;
 
-   // Update is called once per frame
-   void Update()
-   {
+      // Start is called before the first frame update
+      void Start()
+      {
 
-   }
+      }
 
-   public void StartGame()
-   {
-      isGameActive = true;
-   }
+      // Update is called once per frame
+      void Update()
+      {
 
-   public void EndGame()
-   {
-      isGameActive = false;
-   }
+      }
 
-   public bool IsGameActive()
-   {
-      return isGameActive;
+      public void StartGame()
+      {
+         isGameActive = true;
+      }
+
+      public void EndGame()
+      {
+         isGameActive = false;
+      }
+
+      public void ReloadGame()
+      {
+
+      }
+
+      public bool IsGameActive()
+      {
+         return isGameActive;
+      }
    }
 }

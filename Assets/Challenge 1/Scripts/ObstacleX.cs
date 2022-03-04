@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Prototype1
+namespace Prototype1.Challenge1
 {
    public class ObstacleX : MonoBehaviour
    {

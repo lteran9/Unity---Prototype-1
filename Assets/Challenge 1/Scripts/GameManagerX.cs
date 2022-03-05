@@ -6,6 +6,8 @@ namespace Prototype1.Challenge1
 {
    public class GameManagerX : MonoBehaviour
    {
+      [SerializeField] PlayerControllerX _plane = default;
+
       // Start, Settings, Exit
       [SerializeField] Canvas _mainMenu = default;
       // Restart
@@ -38,6 +40,11 @@ namespace Prototype1.Challenge1
       public void ReloadGame()
       {
 
+      }
+
+      public void AdvanceGame()
+      {
+         _plane.DisableInput();
       }
 
       public bool IsGameActive()

@@ -69,5 +69,15 @@ namespace Prototype1.Challenge1
             GetComponent<Rigidbody>().velocity = Vector3.zero;
          }
       }
+
+      public void EnableInput()
+      {
+         blockVerticalInput = false;
+      }
+
+      public void DisableInput()
+      {
+         blockVerticalInput = true;
+      }
    }
 }

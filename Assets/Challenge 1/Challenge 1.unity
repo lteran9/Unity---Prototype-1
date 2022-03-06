@@ -331,6 +331,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 084bf84728b4f45a48016b30f9643db8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _plane: {fileID: 825415031}
+  _mainMenu: {fileID: 0}
+  _gameOver: {fileID: 0}
 --- !u!1 &181819514
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,8 +686,8 @@ GameObject:
   - component: {fileID: 369389345}
   - component: {fileID: 369389344}
   - component: {fileID: 369389343}
-  - component: {fileID: 369389342}
   - component: {fileID: 369389341}
+  - component: {fileID: 369389342}
   m_Layer: 0
   m_Name: Finish Line
   m_TagString: Untagged
@@ -705,20 +708,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 2.2204466e-16, z: 10.000002}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!64 &369389342
-MeshCollider:
+--- !u!114 &369389342
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 369389340}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d7db71e0a2748ff91f6815ca59b7c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameManager: {fileID: 178384841}
 --- !u!23 &369389343
 MeshRenderer:
   m_ObjectHideFlags: 0

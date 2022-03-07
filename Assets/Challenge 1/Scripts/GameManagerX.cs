@@ -51,5 +51,10 @@ namespace Prototype1.Challenge1
       {
          return isGameActive;
       }
+
+      public Vector3 PlanePosition()
+      {
+         return _plane.transform.position;
+      }
    }
 }

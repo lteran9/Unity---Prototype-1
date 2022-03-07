@@ -20,9 +20,23 @@ namespace Prototype1.Challenge1
 
       }
 
+      void LateUpdate()
+      {
+         if ((transform.position.z - _gameManager.PlanePosition().z) < -55)
+         {
+            gameObject.SetActive(false);
+         }
+      }
+
       void OnCollisionEnter(Collision collision)
       {
          _gameManager.EndGame();
+      }
+
+      public void Reposition(Vector3 position)
+      {
+         transform.position = position;
+         gameObject.SetActive(true);
       }
    }
 }
